@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  
+    <head>
+        <title>loginapp</title>
+        <link rel="stylesheet" href="/css/bootstrap.css"/>
+        <link rel="stylesheet" href="/css/style.css"/> 
+    </head>
+    <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            
+            {{#if user}}
+            <li role="presentation" ><a href="/">dashboard</a></li>
+               <li role="presentation"><a href="/users/logout">logout</a></li>
+            {{else}}
+            <li role="presentation"><a href="/users/login"><font size="4" color="blue"><b>login</b></font></a></li></ul>
+            <li role="presentation"><a href="/users/register"><font size="4" color="blue"><b>register</b></font></a></li></ul>
+            {{/if}}
+          </ul>
+        </nav>
+     <div class="left"><font size="8" left="30px" color="Green">Schneider Electric</font></div>
+     </div>
+      
+      
+
+      
+
+      <div class="row ">
+        <div class="col-lg-12">
+            {{#if success_msg}}
+            <div class="alert alert-success">{{success_msg}}</div>
+            {{/if}}
+            {{#if error_msg}}
+            <div class="alert alert-danger">{{error_msg}}</div>
+            {{/if}}
+            {{#if error}}
+            <div class="alert alert-danger">{{error}}</div>
+            {{/if}}
+          {{{body}}}
+        </div>
+
+    
+      </div>
+
+      <footer class="footer">
+        <p></p>
+      </footer>
+
+    </div> <!-- /container -->
+    </body>
+</html>
